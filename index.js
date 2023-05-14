@@ -52,3 +52,35 @@ function writeToFile(fileName, data){
     });
 }
 
+async function init(){
+    const answers = await inquirer.prompt(questions);
+    var svgStr = '';
+    var svgFileName = `logo.svg`;
+    var logoText = "";
+    
+    var textColor = answers["text-color"];
+    console.log(`Logo text color: ${textColor}`);
+    var shapeColor = answers["shape-color"];
+    console.log(`Logo shape color: ${shapeColor}`);
+    var logoShape = answers["logo-shape"];
+    console.log(`Logo shape: ${logoShape}`);
+
+    let shapeSelect;
+    if(logoShape == "Square"){
+        shapeSelect = new Square();
+    } else if(logoShape == "Circle"){
+        shapeSelect = new Circle();
+      } else if(logoShape == "Triangle"){
+          shapeSelect = new Triangle();
+        } else{ console.log("Shape is invalid"); }
+    shapeSelect.setColor(shapeColor);
+
+    var svg = new Svg();
+    svg.setTextEl(logoText, textColor);
+    svg.setShapeEl(shapeSelect);
+    svgStr = svg.render();
+
+    writeToFile(svgFileName, svgStr);
+}
+
+init();
