@@ -55,8 +55,14 @@ function writeToFile(fileName, data){
 async function init(){
     const answers = await inquirer.prompt(questions);
     var svgStr = '';
-    var svgFileName = `logo.svg`;
+    var svgFileName = `${answers["shape-color"]}-${answers["logo-shape"]}-logo.svg`;
     var logoText = "";
+
+    if(answers.text.length >= 0 && answers.text.length <= 3){
+        logoText = answers.text;
+    } else{
+        console.log("Logo text must be 3 characters or less");
+      }
     
     var textColor = answers["text-color"];
     console.log(`Logo text color: ${textColor}`);
@@ -64,7 +70,7 @@ async function init(){
     console.log(`Logo shape color: ${shapeColor}`);
     var logoShape = answers["logo-shape"];
     console.log(`Logo shape: ${logoShape}`);
-
+    
     let shapeSelect;
     if(logoShape == "Square"){
         shapeSelect = new Square();
