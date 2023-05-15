@@ -16,9 +16,9 @@ To install SVG-Logo-Maker, simply clone or download the repository from GitHub. 
 ## Usage
 To use the application, type in "node index.js" in the command line. You will then be prompted to input three characters for your logo. After entering your characters, you will be prompted to choose a color for the text. 
 
-Next, you will be prompted to choose a shape for your logo. You can choose from "circle", "square", or "triangle". After choosing your shape, you will be prompted to choose a color for the shape.
+Next, you will be prompted to choose a shape for your logo. You can choose from "Circle", "Square", or "Triangle". After choosing your shape, you will be prompted to choose a color for the shape.
 
-Finally, the application will output your logo in SVG format. The filename will be in the format of shapecolor-shape-logo.svg. For example, if you chose a blue circle shape, the resulting file name would be blue-circle-logo.svg.
+Finally, the application will output your logo in SVG format and will be located in the "dist" folder. The filename will be in the format of shapecolor-shape-logo.svg. For example, if you chose a blue circle shape, the resulting file name would be blue-circle-logo.svg.
 
 ## License
 SVG Logo Maker is licensed under the MIT License.
