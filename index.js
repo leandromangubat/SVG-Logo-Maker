@@ -1,6 +1,7 @@
 const fs = require("fs");
 const inquirer = require("inquirer");
 const {Circle, Square, Triangle} = require("./lib/shapes");
+const path = require("path");
 
 class Svg {
     constructor(){
@@ -43,8 +44,9 @@ const questions = [
 ];
 
 function writeToFile(fileName, data){
+    const filePath = path.join(__dirname, 'dist', fileName);
     console.log("Creating file...")
-    fs.writeFile(fileName, data, function(err){
+    fs.writeFile(filePath, data, function(err){
         if(err){
             return console.log(err);
         }
