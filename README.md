@@ -20,6 +20,10 @@ Next, you will be prompted to choose a shape for your logo. You can choose from 
 
 Finally, the application will output your logo in SVG format and will be located in the "dist" folder. The filename will be in the format of shapecolor-shape-logo.svg. For example, if you chose a blue circle shape, the resulting file name would be blue-circle-logo.svg.
 
+## Demonstration
+Here is a video demonstrating how to application works:
+https://drive.google.com/file/d/1gbi5rIHZRqFSezRUX2LHFXfvr0OwRKcn/view?usp=sharing
+
 ## License
 SVG Logo Maker is licensed under the MIT License.
 
